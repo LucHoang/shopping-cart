@@ -37,8 +37,23 @@ public class ProductController {
         if (action.equals("show")) {
             cart.addProduct(productOptional.get());
             return "redirect:/shopping-cart";
+        } else if (action.equals("decrease")){
+            cart.decreaseProduct(productOptional.get());
+            return "redirect:/shopping-cart";
         }
         cart.addProduct(productOptional.get());
         return "redirect:/shop";
+    }
+
+    @GetMapping("/info/{id}")
+    public ModelAndView showInformation(@PathVariable Long id) {
+//        try {
+            ModelAndView modelAndView = new ModelAndView("/info");
+            Optional<Product> productOptional = productService.findById(id);
+            modelAndView.addObject("product", productOptional.get());
+            return modelAndView;
+//        } catch (Exception e) {
+//            return new ModelAndView("redirect:/customers");
+//        }
     }
 }

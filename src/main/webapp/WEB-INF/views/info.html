@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Information</title>
+</head>
+<body>
+<!--<form action="/products" method="post">-->
+  <fieldset>
+    <legend>Product Information</legend>
+    <input type="hidden" name="id" th:value="${product.id}">
+    <table>
+      <tr>
+        <td>Id</td>
+        <td th:text="${product.id}"></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" name="name" th:value="${product.name}" readonly>
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>
+          <input type="text" name="price" th:value="${product.price}" readonly>
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input type="text" name="description" th:value="${product.description}" readonly>
+        </td>
+      </tr>
+      <tr>
+<!--        <td colspan="2">-->
+<!--          <input type="submit" value="Update">-->
+<!--        </td>-->
+        <td><a th:href="@{/add/__${product.id}__(action='show')}">Add To Cart</a></td>
+      </tr>
+    </table>
+  </fieldset>
+<!--</form>-->
+<a href="/shop">Back to shop</a>.
+</body>
+</html>
