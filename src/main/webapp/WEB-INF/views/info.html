@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Product Information</title>
+  <title th:text="#{info.titte}"></title>
 </head>
 <body>
 <!--<form action="/products" method="post">-->
   <fieldset>
-    <legend>Product Information</legend>
+    <legend th:text="#{info.titte}"></legend>
     <input type="hidden" name="id" th:value="${product.id}">
     <table>
       <tr>
@@ -15,19 +15,19 @@
         <td th:text="${product.id}"></td>
       </tr>
       <tr>
-        <td>Name</td>
+        <td th:text="#{shop.name_label}"></td>
         <td>
           <input type="text" name="name" th:value="${product.name}" readonly>
         </td>
       </tr>
       <tr>
-        <td>Price</td>
+        <td th:text="#{shop.price_label}"></td>
         <td>
           <input type="text" name="price" th:value="${product.price}" readonly>
         </td>
       </tr>
       <tr>
-        <td>Description</td>
+        <td th:text="#{info.description}"></td>
         <td>
           <input type="text" name="description" th:value="${product.description}" readonly>
         </td>
@@ -36,11 +36,11 @@
 <!--        <td colspan="2">-->
 <!--          <input type="submit" value="Update">-->
 <!--        </td>-->
-        <td><a th:href="@{/add/__${product.id}__(action='show')}">Add To Cart</a></td>
+        <td><a th:href="@{/add/__${product.id}__(action='show')}" th:text="#{shop.addcart_label}"></a></td>
       </tr>
     </table>
   </fieldset>
 <!--</form>-->
-<a href="/shop">Back to shop</a>.
+<a href="/shop" th:text="#{info.back}"></a>.
 </body>
 </html>

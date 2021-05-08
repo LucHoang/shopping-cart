@@ -1,9 +1,9 @@
 com/hsl/model/Product.java
  com.hsl.model.Product
-com/hsl/configuration/AppConfiguration.java
- com.hsl.configuration.AppConfiguration
-com/hsl/configuration/AppInitializer.java
- com.hsl.configuration.AppInitializer
+com/hsl/model/Cart.java
+ com.hsl.model.Cart
+com/hsl/controller/ProductController.java
+ com.hsl.controller.ProductController
 com/hsl/service/ProductService.java
  com.hsl.service.ProductService
 com/hsl/service/IProductService.java
@@ -12,7 +12,7 @@ com/hsl/repository/IProductRepository.java
  com.hsl.repository.IProductRepository
 com/hsl/controller/ShoppingCartController.java
  com.hsl.controller.ShoppingCartController
-com/hsl/controller/ProductController.java
- com.hsl.controller.ProductController
-com/hsl/model/Cart.java
- com.hsl.model.Cart
+com/hsl/configuration/AppConfiguration.java
+ com.hsl.configuration.AppConfiguration
+com/hsl/configuration/AppInitializer.java
+ com.hsl.configuration.AppInitializer

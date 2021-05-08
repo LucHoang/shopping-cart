@@ -2,21 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Shopping Cart</title>
+  <title th:text="#{cart.title}"></title>
 </head>
 <body>
 <p>
-  <a href="/shop">Shop</a>
+  <a href="/shop" th:text="#{cart.title}"></a>
 </p>
-<h1>Your Cart</h1>
+<h1 th:text="#{shop.heading}"></h1>
 <form th:action="@{/shop}" th:object="${cart}" method="post">
-  <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
-  <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
+  <h3 th:text="#{cart.totalitem}"><span th:text="${cart.countItemQuantity()}"></span></h3>
+  <h3 th:text="#{cart.product}"><span th:text="${cart.countProductQuantity()}"></span></h3>
   <table border="1">
     <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th th:text="#{cart.item}"></th>
+      <th th:text="#{cart.quantity}"></th>
+      <th th:text="#{shop.price_label}"></th>
     </tr>
     <tr th:each="product: ${cart.products}">
       <td th:text="${product.getKey().name}"></td>
@@ -29,7 +29,7 @@
       <td th:text="${product.getKey().price}"></td>
     </tr>
     <tr>
-      <td>Total</td>
+      <td th:text="#{cart.total}"></td>
       <td></td>
       <td th:text="${cart.countTotalPayment()}"></td>
     </tr>

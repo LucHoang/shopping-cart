@@ -2,17 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Shop</title>
+  <title th:text="#{shop.title}"></title>
 </head>
 <body>
+<span th:text="#{shop.language}"></span> <a href="?lang=en" th:text="#{shop.english}"></a> | <a href="?lang=zh" th:text="#{shop.china}"></a>
 <p>
-  <a href="/shopping-cart">Your cart</a>
+  <a href="/shopping-cart" th:text="#{shop.heading}"></a>
 </p>
 <table border="1">
   <tr>
-    <td>Name</td>
-    <td>Price</td>
-    <td>Add To Cart</td>
+    <td th:text="#{shop.name_label}"></td>
+    <td th:text="#{shop.price_label}"></td>
+    <td th:text="#{shop.addcart_label}"></td>
   </tr>
   <th:block th:each="product:${products}">
     <tr>
@@ -20,7 +21,7 @@
         <a th:href="@{/info/{id}(id=${product.id})}" th:text="${product.name}"></a>
       </td>
       <td th:text="${product.price}"></td>
-      <td><a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a></td>
+      <td><a th:href="@{/add/__${product.id}__(action='list')}" th:text="#{shop.addcart_label}"></a></td>
     </tr>
   </th:block>
 </table>
